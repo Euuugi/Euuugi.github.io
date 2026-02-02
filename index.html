@@ -1,1 +1,86 @@
-<p>Will you be my valentine?</p>
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Czy zostaniesz moją walentynką? 💘</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ff4e8c, #ff9a9e);
+      font-family: 'Arial', sans-serif;
+      color: white;
+      text-align: center;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      max-width: 400px;
+    }
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 1.2em;
+      margin-bottom: 30px;
+    }
+    button {
+      font-size: 1.2em;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      margin: 10px;
+    }
+    .yes {
+      background: #ff2f6e;
+      color: white;
+    }
+    .no {
+      background: white;
+      color: #ff2f6e;
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>💖 Czy zostaniesz moją walentynką? 💖</h1>
+    <p>Obiecuję dużo uśmiechów, ciepłą herbatę i miłe chwile ☕✨</p>
+    <button class="yes" onclick="yes()">TAK 💘</button>
+    <button class="no" onmouseover="moveNo()">NIE 🙈</button>
+  </div>
+
+  <script>
+    function yes() {
+      document.body.innerHTML = `
+        <div style="
+          display:flex;
+          justify-content:center;
+          align-items:center;
+          height:100vh;
+          background:linear-gradient(135deg,#ff4e8c,#ff9a9e);
+          color:white;
+          font-family:Arial;
+          text-align:center;
+        ">
+          <h1>🥰 Wiedziałem!<br>Walentynki zapowiadają się idealnie 💞</h1>
+        </div>
+      `;
+    }
+
+    function moveNo() {
+      const btn = document.querySelector('.no');
+      const x = Math.random() * 200 - 100;
+      const y = Math.random() * 200 - 100;
+      btn.style.transform = `translate(${x}px, ${y}px)`;
+    }
+  </script>
+</body>
+</html>
